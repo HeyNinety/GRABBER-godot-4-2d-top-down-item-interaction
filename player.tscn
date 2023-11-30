@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dksyx7mfhqv1f"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_thqsv"]
+[ext_resource type="Texture2D" uid="uid://bjasiy3g6u31j" path="res://icon.svg" id="2_g041h"]
+[ext_resource type="Script" path="res://ItemHolder.gd" id="3_hqqdk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkojc"]
+radius = 128.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(264, 307)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_thqsv")
+
+[node name="PlayerGraphic" type="Sprite2D" parent="."]
+texture = ExtResource("2_g041h")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vkojc")
+
+[node name="ItemHolder" type="Node2D" parent="."]
+script = ExtResource("3_hqqdk")
+
+[node name="ItemAnchor" type="Marker2D" parent="ItemHolder"]
+position = Vector2(128, 0)
+
+[node name="ItemHolderDrawDebug" type="Sprite2D" parent="ItemHolder"]
+position = Vector2(65.05, 0)
+rotation = 1.5708
+scale = Vector2(0.09, 0.985)
+texture = ExtResource("2_g041h")
