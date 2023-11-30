@@ -1,0 +1,382 @@
+[gd_scene load_steps=18 format=3 uid="uid://gkai4es01cu0"]
+
+[ext_resource type="PackedScene" uid="uid://dksyx7mfhqv1f" path="res://scenes/player.tscn" id="1_83awf"]
+[ext_resource type="PackedScene" uid="uid://chk136voelpil" path="res://scenes/pickup_item.tscn" id="2_m7fbk"]
+[ext_resource type="Texture2D" uid="uid://cf3cla87jlxdc" path="res://assets/input_icons/tile_0423.png" id="3_kmsod"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="3_or6v7"]
+[ext_resource type="Texture2D" uid="uid://mgxo3wxu8vhg" path="res://assets/input_icons/tile_0076.png" id="3_qfwl1"]
+[ext_resource type="FontFile" uid="uid://clc33o4hf6ohg" path="res://fonts/PublicPixel-z84yD.ttf" id="4_fs3ih"]
+[ext_resource type="Texture2D" uid="uid://bvf6qhal27esf" path="res://assets/input_icons/tile_0491.png" id="5_7m8ke"]
+[ext_resource type="Texture2D" uid="uid://grwqb1746143" path="res://assets/input_icons/tile_0004.png" id="6_mnvwh"]
+[ext_resource type="Texture2D" uid="uid://bsvq3m7ad0mp5" path="res://assets/input_icons/tile_0005.png" id="7_xviuj"]
+[ext_resource type="Texture2D" uid="uid://dq7nu83g7gi1g" path="res://assets/input_icons/tile_0122.png" id="8_utv0l"]
+[ext_resource type="Texture2D" uid="uid://04th07772atk" path="res://assets/input_icons/tile_0121.png" id="9_rp758"]
+[ext_resource type="Texture2D" uid="uid://du1ab7s3jm7nu" path="res://assets/input_icons/tile_0120.png" id="10_oxysh"]
+[ext_resource type="Texture2D" uid="uid://ba2j4b1tch3g7" path="res://assets/input_icons/tile_0086.png" id="11_afma6"]
+[ext_resource type="Texture2D" uid="uid://di1c8pfu6lri2" path="res://assets/input_icons/tile_0124.png" id="13_3aswv"]
+[ext_resource type="Texture2D" uid="uid://4wb1a5sbe2lp" path="res://assets/input_icons/tile_0087.png" id="14_4bkek"]
+
+[sub_resource type="Theme" id="Theme_aykrl"]
+default_font = ExtResource("4_fs3ih")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3aiy"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_83awf")]
+
+[node name="PickupItem" parent="." instance=ExtResource("2_m7fbk")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_or6v7")
+
+[node name="ControllerUI" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_right = 32.0
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ControllerUI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -102.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Move" type="Panel" parent="UI/ControllerUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/ControllerUI/VBoxContainer/Move"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_kmsod")
+
+[node name="Label" type="Label" parent="UI/ControllerUI/VBoxContainer/Move"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Move"
+label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Aim" type="Panel" parent="UI/ControllerUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/ControllerUI/VBoxContainer/Aim"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("5_7m8ke")
+
+[node name="Label" type="Label" parent="UI/ControllerUI/VBoxContainer/Aim"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Aim"
+label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Grab" type="Panel" parent="UI/ControllerUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/ControllerUI/VBoxContainer/Grab"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("6_mnvwh")
+
+[node name="Label" type="Label" parent="UI/ControllerUI/VBoxContainer/Grab"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Grab"
+label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Drop" type="Panel" parent="UI/ControllerUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/ControllerUI/VBoxContainer/Drop"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_xviuj")
+
+[node name="Label" type="Label" parent="UI/ControllerUI/VBoxContainer/Drop"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Drop"
+label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Keyboard&MouseUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_right = -104.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Keyboard&MouseUI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -102.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Move" type="Panel" parent="UI/Keyboard&MouseUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/Keyboard&MouseUI/VBoxContainer/Move"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_utv0l")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Keyboard&MouseUI/VBoxContainer/Move"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -8.0
+offset_right = -16.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_rp758")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Keyboard&MouseUI/VBoxContainer/Move"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -8.0
+offset_right = -32.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("10_oxysh")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Keyboard&MouseUI/VBoxContainer/Move"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -8.0
+offset_right = -48.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("11_afma6")
+
+[node name="Label" type="Label" parent="UI/Keyboard&MouseUI/VBoxContainer/Move"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Move"
+label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Aim" type="Panel" parent="UI/Keyboard&MouseUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/Keyboard&MouseUI/VBoxContainer/Aim"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_qfwl1")
+
+[node name="Label" type="Label" parent="UI/Keyboard&MouseUI/VBoxContainer/Aim"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Aim"
+label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Grab" type="Panel" parent="UI/Keyboard&MouseUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/Keyboard&MouseUI/VBoxContainer/Grab"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_3aswv")
+
+[node name="Label" type="Label" parent="UI/Keyboard&MouseUI/VBoxContainer/Grab"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Grab"
+label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Drop" type="Panel" parent="UI/Keyboard&MouseUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="UI/Keyboard&MouseUI/VBoxContainer/Drop"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_4bkek")
+
+[node name="Label" type="Label" parent="UI/Keyboard&MouseUI/VBoxContainer/Drop"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_right = 64.0
+offset_bottom = 9.5
+grow_vertical = 2
+theme = SubResource("Theme_aykrl")
+text = " Drop"
+label_settings = SubResource("LabelSettings_d3aiy")
