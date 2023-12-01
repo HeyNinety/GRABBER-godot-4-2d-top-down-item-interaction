@@ -1,6 +1,7 @@
 ![grabber_LOGO](https://github.com/HeyNinety/Godot-4--Top-down-Pickup-Item-Project/assets/68526679/f78aa66a-014b-432d-a22c-4663ca542b05)
 
-Grabber is an open-source top-down 2D project made with the [Godot Game Engine](https://godotengine.org).
+GRABBER is an open-source top-down 2D item interaction project made with the [Godot Game Engine](https://godotengine.org).
+
 
 ## Preview
 ![grabber_pickup](https://github.com/HeyNinety/Godot-4--Top-down-Pickup-Item-Project/assets/68526679/240dd089-f9c4-4ccd-95d5-dc54821cecfa)
