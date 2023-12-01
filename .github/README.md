@@ -25,7 +25,8 @@ GRABBER is an open-source top-down 2D item interaction project made with the [Go
 
 
 ## Details
-Made with Godot v4.1.3 stable
+Made with Godot v4.1.3 stable.
+
 For license information see [LICENSE](LICENSE) file.
 
 
