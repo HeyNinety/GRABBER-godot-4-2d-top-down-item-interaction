@@ -1,6 +1,4 @@
-res://main.tscn
-res://player.tscn
-res://scripts/Player.gd
 res://scenes/main.tscn
-res://scripts/UI.gd
-res://scenes/player.tscn
+res://scripts/Player.gd
+res://scenes/pickup_item.tscn
+res://scripts/PickupItem.gd

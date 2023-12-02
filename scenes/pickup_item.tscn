@@ -9,12 +9,10 @@ size = Vector2(64, 64)
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrvmf"]
 radius = 64.0
 
-[node name="PickupItem" type="RigidBody2D"]
+[node name="PickupItem" type="AnimatableBody2D"]
 position = Vector2(812, 334)
 collision_layer = 2
 collision_mask = 2
-mass = 0.01
-gravity_scale = 0.0
 script = ExtResource("1_674a7")
 
 [node name="PickupGraphic" type="Sprite2D" parent="."]
