@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701528039
+::res://::1701529097
 icon.png::CompressedTexture2D::1899973785993095094::1701430113::1701430113::1::::<><>::
 icon.svg::CompressedTexture2D::3019228772786213437::1701430113::1701430113::1::::<><>::
 ::res://assets/::1701430113
@@ -17,12 +17,12 @@ tile_0423.png::CompressedTexture2D::5181729292853489900::1701430113::1701430113:
 tile_0491.png::CompressedTexture2D::3872619456540903433::1701430113::1701430113::1::::<><>::
 ::res://fonts/::1701430113
 PublicPixel-z84yD.ttf::FontFile::5550798261391670548::1701430113::1701430113::1::::<><>::
-::res://scenes/::1701430113
-main.tscn::PackedScene::441792655928674025::1701430113::0::1::::<><>::uid://dksyx7mfhqv1f::::res://scenes/player.tscn<>uid://chk136voelpil::::res://scenes/pickup_item.tscn<>uid://cf3cla87jlxdc::::res://assets/input_icons/tile_0423.png<>res://scripts/UI.gd<>uid://mgxo3wxu8vhg::::res://assets/input_icons/tile_0076.png<>uid://clc33o4hf6ohg::::res://fonts/PublicPixel-z84yD.ttf<>uid://bvf6qhal27esf::::res://assets/input_icons/tile_0491.png<>uid://grwqb1746143::::res://assets/input_icons/tile_0004.png<>uid://bsvq3m7ad0mp5::::res://assets/input_icons/tile_0005.png<>uid://dq7nu83g7gi1g::::res://assets/input_icons/tile_0122.png<>uid://04th07772atk::::res://assets/input_icons/tile_0121.png<>uid://du1ab7s3jm7nu::::res://assets/input_icons/tile_0120.png<>uid://ba2j4b1tch3g7::::res://assets/input_icons/tile_0086.png<>uid://di1c8pfu6lri2::::res://assets/input_icons/tile_0124.png<>uid://4wb1a5sbe2lp::::res://assets/input_icons/tile_0087.png
-pickup_item.tscn::PackedScene::5286437355740930159::1701430113::0::1::::<><>::res://scripts/PickupItem.gd<>uid://bjasiy3g6u31j::::res://icon.svg
+::res://scenes/::1701529087
+main.tscn::PackedScene::441792655928674025::1701529087::0::1::::<><>::uid://dksyx7mfhqv1f::::res://scenes/player.tscn<>uid://chk136voelpil::::res://scenes/pickup_item.tscn<>uid://cf3cla87jlxdc::::res://assets/input_icons/tile_0423.png<>res://scripts/UI.gd<>uid://mgxo3wxu8vhg::::res://assets/input_icons/tile_0076.png<>uid://clc33o4hf6ohg::::res://fonts/PublicPixel-z84yD.ttf<>uid://bvf6qhal27esf::::res://assets/input_icons/tile_0491.png<>uid://grwqb1746143::::res://assets/input_icons/tile_0004.png<>uid://bsvq3m7ad0mp5::::res://assets/input_icons/tile_0005.png<>uid://dq7nu83g7gi1g::::res://assets/input_icons/tile_0122.png<>uid://04th07772atk::::res://assets/input_icons/tile_0121.png<>uid://du1ab7s3jm7nu::::res://assets/input_icons/tile_0120.png<>uid://ba2j4b1tch3g7::::res://assets/input_icons/tile_0086.png<>uid://di1c8pfu6lri2::::res://assets/input_icons/tile_0124.png<>uid://4wb1a5sbe2lp::::res://assets/input_icons/tile_0087.png
+pickup_item.tscn::PackedScene::5286437355740930159::1701528985::0::1::::<><>::res://scripts/PickupItem.gd<>uid://bjasiy3g6u31j::::res://icon.svg
 player.tscn::PackedScene::7899809267640953821::1701430113::0::1::::<><>::res://scripts/Player.gd<>uid://2cmj5ak8unxe::::res://icon.png<>res://scripts/ItemHolder.gd
-::res://scripts/::1701430113
+::res://scripts/::1701528768
 ItemHolder.gd::GDScript::-1::1701430113::0::1::::<>Node2D<>::
-PickupItem.gd::GDScript::-1::1701430113::0::1::::<>RigidBody2D<>::
-Player.gd::GDScript::-1::1701430113::0::1::::<>CharacterBody2D<>::
+PickupItem.gd::GDScript::-1::1701528768::0::1::::<>AnimatableBody2D<>::
+Player.gd::GDScript::-1::1701528461::0::1::::<>CharacterBody2D<>::
 UI.gd::GDScript::-1::1701430113::0::1::::<>CanvasLayer<>::

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://chk136voelpil"]
+[gd_scene load_steps=4 format=3 uid="uid://chk136voelpil"]
 
 [ext_resource type="Script" path="res://scripts/PickupItem.gd" id="1_674a7"]
 [ext_resource type="Texture2D" uid="uid://bjasiy3g6u31j" path="res://icon.svg" id="2_1yam0"]
@@ -6,13 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0lk2"]
 size = Vector2(64, 64)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vrvmf"]
-radius = 64.0
-
 [node name="PickupItem" type="AnimatableBody2D"]
 position = Vector2(812, 334)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_674a7")
 
 [node name="PickupGraphic" type="Sprite2D" parent="."]
@@ -21,10 +18,3 @@ texture = ExtResource("2_1yam0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u0lk2")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_vrvmf")
