@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-@export var max_health: int = 3
+
+@onready var pickupItem = get_node("../PickupItem")
+
 @export var speed: float = 50000.0
 @export var accel: float = 50000.0
 
@@ -12,3 +14,17 @@ func _physics_process(delta):
 	
 	velocity = direction.normalized() * delta * speed
 	move_and_slide()
+
+func _input(_event):
+	if Input.is_action_just_pressed("pickup_item"):
+		var bodies = $Area2D.get_overlapping_bodies()
+		for body in bodies:
+			if body.name == "PickupItem" and self.canHold == true:
+				print("pickup item")
+				pickupItem.is_held = true
+				self.canHold = false
+				
+	if Input.is_action_just_pressed("drop_item") and pickupItem.is_held == true:
+		#print("drop item")
+		pickupItem.is_held = false
+		self.canHold = true
