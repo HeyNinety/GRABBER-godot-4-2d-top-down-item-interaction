@@ -40,11 +40,11 @@ Like what you see?
 
 
 ## Additional credit
-UI Input Icons by Kenney
+UI Input Icons by Kenney:
 https://kenney.nl
 
-Original icon design by Adrien Coquet
+Original icon design by Adrien Coquet:
 https://thenounproject.com/coquet_adrien/
 
-Public Pixel font designed by GGBotNet
+Public Pixel font designed by GGBotNet:
 https://www.fontspace.com/public-pixel-font-f72305
