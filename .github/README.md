@@ -35,3 +35,16 @@ For license information see [LICENSE](LICENSE) file.
 Like what you see?
 
 <a href='https://ko-fi.com/W7W0CJP7P' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+
+
+
+## Additional credit
+UI Input Icons by Kenney
+https://kenney.nl
+
+Original icon design by Adrien Coquet
+https://thenounproject.com/coquet_adrien/
+
+Public Pixel font designed by GGBotNet
+https://www.fontspace.com/public-pixel-font-f72305
