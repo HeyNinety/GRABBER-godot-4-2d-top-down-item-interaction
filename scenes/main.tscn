@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://gkai4es01cu0"]
+[gd_scene load_steps=17 format=3 uid="uid://gkai4es01cu0"]
 
 [ext_resource type="PackedScene" uid="uid://dksyx7mfhqv1f" path="res://scenes/player.tscn" id="1_83awf"]
 [ext_resource type="PackedScene" uid="uid://chk136voelpil" path="res://scenes/pickup_item.tscn" id="2_m7fbk"]
@@ -8,24 +8,21 @@
 [ext_resource type="FontFile" uid="uid://clc33o4hf6ohg" path="res://fonts/PublicPixel-z84yD.ttf" id="4_fs3ih"]
 [ext_resource type="Texture2D" uid="uid://bvf6qhal27esf" path="res://assets/input_icons/tile_0491.png" id="5_7m8ke"]
 [ext_resource type="Texture2D" uid="uid://grwqb1746143" path="res://assets/input_icons/tile_0004.png" id="6_mnvwh"]
-[ext_resource type="Texture2D" uid="uid://bsvq3m7ad0mp5" path="res://assets/input_icons/tile_0005.png" id="7_xviuj"]
 [ext_resource type="Texture2D" uid="uid://dq7nu83g7gi1g" path="res://assets/input_icons/tile_0122.png" id="8_utv0l"]
 [ext_resource type="Texture2D" uid="uid://04th07772atk" path="res://assets/input_icons/tile_0121.png" id="9_rp758"]
 [ext_resource type="Texture2D" uid="uid://du1ab7s3jm7nu" path="res://assets/input_icons/tile_0120.png" id="10_oxysh"]
 [ext_resource type="Texture2D" uid="uid://ba2j4b1tch3g7" path="res://assets/input_icons/tile_0086.png" id="11_afma6"]
 [ext_resource type="Texture2D" uid="uid://di1c8pfu6lri2" path="res://assets/input_icons/tile_0124.png" id="13_3aswv"]
-[ext_resource type="Texture2D" uid="uid://4wb1a5sbe2lp" path="res://assets/input_icons/tile_0087.png" id="14_4bkek"]
 
 [sub_resource type="Theme" id="Theme_aykrl"]
 default_font = ExtResource("4_fs3ih")
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3aiy"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06qxj"]
+size = Vector2(2152, 130)
+
 [node name="Main" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_83awf")]
-
-[node name="PickupItem" parent="." instance=ExtResource("2_m7fbk")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_or6v7")
@@ -151,6 +148,7 @@ text = " Grab"
 label_settings = SubResource("LabelSettings_d3aiy")
 
 [node name="Drop" type="Panel" parent="UI/ControllerUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -167,7 +165,7 @@ offset_top = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("7_xviuj")
+texture = ExtResource("6_mnvwh")
 
 [node name="Label" type="Label" parent="UI/ControllerUI/VBoxContainer/Drop"]
 layout_mode = 1
@@ -350,6 +348,7 @@ text = " Grab"
 label_settings = SubResource("LabelSettings_d3aiy")
 
 [node name="Drop" type="Panel" parent="UI/Keyboard&MouseUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -366,7 +365,7 @@ offset_top = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("14_4bkek")
+texture = ExtResource("13_3aswv")
 
 [node name="Label" type="Label" parent="UI/Keyboard&MouseUI/VBoxContainer/Drop"]
 layout_mode = 1
@@ -380,3 +379,36 @@ grow_vertical = 2
 theme = SubResource("Theme_aykrl")
 text = " Drop"
 label_settings = SubResource("LabelSettings_d3aiy")
+
+[node name="Player" parent="." instance=ExtResource("1_83awf")]
+
+[node name="PickupItem" parent="." instance=ExtResource("2_m7fbk")]
+mass = 10.0
+gravity_scale = 1.0
+linear_damp = 10.0
+angular_damp = 10.0
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Area2D" type="StaticBody2D" parent="World"]
+position = Vector2(638, 0)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D"]
+position = Vector2(303, -1)
+shape = SubResource("RectangleShape2D_06qxj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Area2D"]
+position = Vector2(311, 1082)
+shape = SubResource("RectangleShape2D_06qxj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Area2D"]
+position = Vector2(-638, 592)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_06qxj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Area2D"]
+position = Vector2(1282, 570)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_06qxj")

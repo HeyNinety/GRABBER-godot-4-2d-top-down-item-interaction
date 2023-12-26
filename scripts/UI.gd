@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var player = get_node("../Player/ItemHolder")
+@onready var player = get_node("../Player")
 
 func _process(_delta):
 	#toggle UI mode

@@ -1,14 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dksyx7mfhqv1f"]
+[gd_scene load_steps=4 format=3 uid="uid://dksyx7mfhqv1f"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_thqsv"]
 [ext_resource type="Texture2D" uid="uid://2cmj5ak8unxe" path="res://icon.png" id="2_36h8g"]
-[ext_resource type="Script" path="res://scripts/ItemHolder.gd" id="3_hqqdk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd4tg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfbuc"]
 size = Vector2(128, 128)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tfpn3"]
-radius = 128.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(264, 307)
@@ -19,23 +15,14 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_36h8g")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_pd4tg")
+shape = SubResource("RectangleShape2D_rfbuc")
 
 [node name="ItemHolder" type="Node2D" parent="."]
-script = ExtResource("3_hqqdk")
 
 [node name="ItemAnchor" type="Marker2D" parent="ItemHolder"]
 position = Vector2(160, 0)
 
-[node name="ItemHolderDrawDebug" type="Sprite2D" parent="ItemHolder"]
-position = Vector2(65.05, 0)
-rotation = 1.5708
-scale = Vector2(0.513773, 3.73961)
-texture = ExtResource("2_36h8g")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_tfpn3")
+[node name="PickupRaycast" type="RayCast2D" parent="ItemHolder"]
+rotation = -1.5708
+target_position = Vector2(0, 160)
+collision_mask = 5
