@@ -1,34 +1,41 @@
 [gd_scene load_steps=6 format=3 uid="uid://dksyx7mfhqv1f"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_thqsv"]
-[ext_resource type="Texture2D" uid="uid://dtfoj2g65oymf" path="res://assets/player_sprites/player_spritesheet.png" id="2_sf7b2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7xo2u"]
-atlas = ExtResource("2_sf7b2")
-region = Rect2(40, 48, 75, 51)
+[ext_resource type="Texture2D" uid="uid://2cmj5ak8unxe" path="res://icon.png" id="2_36h8g"]
+[ext_resource type="Script" path="res://scripts/ItemHolder.gd" id="3_hqqdk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pd4tg"]
-size = Vector2(44, 78)
+size = Vector2(128, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l8qt"]
-size = Vector2(63, 78)
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfpn3"]
+radius = 128.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(264, 307)
 script = ExtResource("1_thqsv")
 
 [node name="PlayerGraphic" type="Sprite2D" parent="."]
-rotation = 1.57079
-texture = SubResource("AtlasTexture_7xo2u")
+scale = Vector2(4, 4)
+texture = ExtResource("2_36h8g")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_pd4tg")
+
+[node name="ItemHolder" type="Node2D" parent="."]
+script = ExtResource("3_hqqdk")
+
+[node name="ItemAnchor" type="Marker2D" parent="ItemHolder"]
+position = Vector2(160, 0)
+
+[node name="ItemHolderDrawDebug" type="Sprite2D" parent="ItemHolder"]
+position = Vector2(65.05, 0)
+rotation = 1.5708
+scale = Vector2(0.513773, 3.73961)
+texture = ExtResource("2_36h8g")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(48.5, 0)
-shape = SubResource("RectangleShape2D_3l8qt")
+shape = SubResource("CircleShape2D_tfpn3")
