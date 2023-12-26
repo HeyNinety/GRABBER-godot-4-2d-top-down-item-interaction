@@ -23,9 +23,9 @@ default_font = ExtResource("4_fs3ih")
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_83awf")]
+[node name="Player" parent="." instance=ExtResource("1_83awf")]
 
-[node name="Item" parent="." groups=["item"] instance=ExtResource("2_m7fbk")]
+[node name="PickupItem" parent="." instance=ExtResource("2_m7fbk")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_or6v7")
@@ -380,6 +380,3 @@ grow_vertical = 2
 theme = SubResource("Theme_aykrl")
 text = " Drop"
 label_settings = SubResource("LabelSettings_d3aiy")
-
-[connection signal="drop_item" from="Player" to="Item" method="_on_player_drop_item"]
-[connection signal="pick_up_item" from="Player" to="Item" method="_on_player_pick_up_item"]
