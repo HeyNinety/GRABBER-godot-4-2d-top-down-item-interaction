@@ -1,11 +1,20 @@
 extends AnimatableBody2D
 
+@onready var originalParent = get_node("..")
+@onready var itemAnchor = get_node("../Player")
 
-var is_held: bool = false
-@onready var itemAnchor = get_node("../Player/ItemHolder/ItemAnchor")
+
+func _on_player_pick_up_item():
+	pickup()
 
 
-func _physics_process(_delta):
-	if is_held == true:
-		print("is holding!")
-		self.position = itemAnchor.global_position
+func _on_player_drop_item():
+	drop()
+
+
+func pickup():
+	reparent(itemAnchor)
+
+
+func drop():
+	reparent(originalParent)
