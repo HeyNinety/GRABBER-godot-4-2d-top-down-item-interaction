@@ -1,26 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://dksyx7mfhqv1f"]
+[gd_scene load_steps=6 format=3 uid="uid://dksyx7mfhqv1f"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_thqsv"]
-[ext_resource type="Texture2D" uid="uid://2cmj5ak8unxe" path="res://icon.png" id="2_36h8g"]
+[ext_resource type="Texture2D" uid="uid://c263teum1xt6r" path="res://assets/player_sprites/bkspr01.png" id="2_0v7t6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfbuc"]
-size = Vector2(128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5anho"]
+atlas = ExtResource("2_0v7t6")
+region = Rect2(40, 48, 75, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_excgk"]
+atlas = ExtResource("2_0v7t6")
+region = Rect2(138, 434, 66, 73)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1cima"]
+radius = 19.0
+height = 72.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(264, 307)
 script = ExtResource("1_thqsv")
 
 [node name="PlayerGraphic" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
-texture = ExtResource("2_36h8g")
+rotation = 1.57079
+texture = SubResource("AtlasTexture_5anho")
+
+[node name="PlayerGraphicGrab" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.57079
+texture = SubResource("AtlasTexture_excgk")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." groups=["Player"]]
-shape = SubResource("RectangleShape2D_rfbuc")
+position = Vector2(-5, 0)
+shape = SubResource("CapsuleShape2D_1cima")
 
 [node name="ItemAnchor" type="Marker2D" parent="."]
-position = Vector2(160, 0)
+position = Vector2(68, 0)
 
 [node name="PickupRaycast" type="RayCast2D" parent="."]
 rotation = -1.5708
-target_position = Vector2(0, 160)
+target_position = Vector2(0, 90)
 collision_mask = 4

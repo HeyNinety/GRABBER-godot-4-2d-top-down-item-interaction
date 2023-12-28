@@ -4,8 +4,8 @@ extends CharacterBody2D
 @onready var hand = $ItemAnchor
 @onready var pickup_raycast = $PickupRaycast
 
-@export var speed: float = 50000.0
-@export var accel: float = 50000.0
+@export var speed: float = 25000.0
+@export var accel: float = 25000.0
 
 @export var use_controller: bool = false
 
@@ -41,17 +41,7 @@ func _physics_process(delta):
 		
 		picked_object.set_linear_velocity((b-a) * pull_power)
 		picked_object.rotation = self.rotation
-		
-		
-	#detect item via raycast
-	if pickup_raycast.is_colliding():
-		var target = pickup_raycast.get_collider()
-		if target != null:
-			if target.is_in_group("Item"):
-				#print("target is Item")
-				$"../InteractGraphic".show()
-	else:
-		$"../InteractGraphic".hide()
+
 
 func _input(event: InputEvent) -> void:
 	#toggles between mosue input and controller input depending on what input is being used
@@ -72,17 +62,27 @@ func pick_object():
 	var object = pickup_raycast.get_collider()
 	
 	if object != null and object.is_in_group("Item"):
-		
 		picked_object = object
-		$"../UI/ControllerUI/VBoxContainer/Grab".hide()
-		$"../UI/ControllerUI/VBoxContainer/Drop".show()
-		$"../UI/Keyboard&MouseUI/VBoxContainer/Grab".hide()
-		$"../UI/Keyboard&MouseUI/VBoxContainer/Drop".show()
+		hide_grab()
 
 func remove_object():
 	if picked_object != null:
 		picked_object = null
-		$"../UI/ControllerUI/VBoxContainer/Grab".show()
-		$"../UI/ControllerUI/VBoxContainer/Drop".hide()
-		$"../UI/Keyboard&MouseUI/VBoxContainer/Grab".show()
-		$"../UI/Keyboard&MouseUI/VBoxContainer/Drop".hide()
+		show_grab()
+		
+
+func hide_grab():
+	$PlayerGraphic.hide()
+	$PlayerGraphicGrab.show()
+	$"../UI/ControllerUI/VBoxContainer/Grab".hide()
+	$"../UI/ControllerUI/VBoxContainer/Drop".show()
+	$"../UI/Keyboard&MouseUI/VBoxContainer/Grab".hide()
+	$"../UI/Keyboard&MouseUI/VBoxContainer/Drop".show()
+
+func show_grab():
+	$PlayerGraphic.show()
+	$PlayerGraphicGrab.hide()
+	$"../UI/ControllerUI/VBoxContainer/Grab".show()
+	$"../UI/ControllerUI/VBoxContainer/Drop".hide()
+	$"../UI/Keyboard&MouseUI/VBoxContainer/Grab".show()
+	$"../UI/Keyboard&MouseUI/VBoxContainer/Drop".hide()

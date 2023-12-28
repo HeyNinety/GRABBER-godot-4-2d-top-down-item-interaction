@@ -1,6 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://gkai4es01cu0"]
+[gd_scene load_steps=18 format=3 uid="uid://gkai4es01cu0"]
 
 [ext_resource type="PackedScene" uid="uid://dksyx7mfhqv1f" path="res://scenes/player.tscn" id="1_83awf"]
+[ext_resource type="Texture2D" uid="uid://da1mbl7xxtd4i" path="res://assets/environment/floor.png" id="1_pykt2"]
+[ext_resource type="Texture2D" uid="uid://bcm48p0ebrbo2" path="res://assets/environment/wall.png" id="2_fm1lc"]
 [ext_resource type="PackedScene" uid="uid://chk136voelpil" path="res://scenes/pickup_item.tscn" id="2_m7fbk"]
 [ext_resource type="Texture2D" uid="uid://cf3cla87jlxdc" path="res://assets/input_icons/tile_0423.png" id="3_kmsod"]
 [ext_resource type="Script" path="res://scripts/UI.gd" id="3_or6v7"]
@@ -19,10 +21,125 @@ default_font = ExtResource("4_fs3ih")
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3aiy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_06qxj"]
-size = Vector2(2152, 130)
-
 [node name="Main" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="World"]
+position = Vector2(960, 540)
+texture = ExtResource("1_pykt2")
+
+[node name="Wall" type="StaticBody2D" parent="World"]
+position = Vector2(240, -9)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall2" type="StaticBody2D" parent="World"]
+position = Vector2(720, -9)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall2"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall2"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall3" type="StaticBody2D" parent="World"]
+position = Vector2(1200, -9)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall3"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall3"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall4" type="StaticBody2D" parent="World"]
+position = Vector2(1680, -9)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall4"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall4"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall5" type="StaticBody2D" parent="World"]
+position = Vector2(240, 1086)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall5"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall5"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall6" type="StaticBody2D" parent="World"]
+position = Vector2(720, 1086)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall6"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall6"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall7" type="StaticBody2D" parent="World"]
+position = Vector2(1200, 1086)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall7"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall7"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall8" type="StaticBody2D" parent="World"]
+position = Vector2(1680, 1086)
+
+[node name="Wall" type="Sprite2D" parent="World/Wall8"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall8"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall9" type="StaticBody2D" parent="World"]
+position = Vector2(-25, 299)
+rotation = 1.57079
+
+[node name="Wall" type="Sprite2D" parent="World/Wall9"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall9"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall10" type="StaticBody2D" parent="World"]
+position = Vector2(-25, 779)
+rotation = 1.57079
+
+[node name="Wall" type="Sprite2D" parent="World/Wall10"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall10"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall11" type="StaticBody2D" parent="World"]
+position = Vector2(1941, 299)
+rotation = 1.57079
+
+[node name="Wall" type="Sprite2D" parent="World/Wall11"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall11"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="Wall12" type="StaticBody2D" parent="World"]
+position = Vector2(1941, 779)
+rotation = 1.57079
+
+[node name="Wall" type="Sprite2D" parent="World/Wall12"]
+texture = ExtResource("2_fm1lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall12"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_or6v7")
@@ -389,46 +506,9 @@ label_settings = SubResource("LabelSettings_d3aiy")
 [node name="Player" parent="." instance=ExtResource("1_83awf")]
 position = Vector2(550, 550)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-position = Vector2(0, -93)
-remote_path = NodePath("../../InteractGraphic")
-update_rotation = false
-update_scale = false
-
 [node name="PickupItem" parent="." instance=ExtResource("2_m7fbk")]
 position = Vector2(1310, 490)
 mass = 10.0
 gravity_scale = 1.0
 linear_damp = 10.0
 angular_damp = 10.0
-
-[node name="World" type="Node2D" parent="."]
-visible = false
-
-[node name="Area2D" type="StaticBody2D" parent="World"]
-position = Vector2(638, 0)
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D"]
-position = Vector2(303, -1)
-shape = SubResource("RectangleShape2D_06qxj")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Area2D"]
-position = Vector2(311, 1082)
-shape = SubResource("RectangleShape2D_06qxj")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Area2D"]
-position = Vector2(-638, 592)
-rotation = 1.57079
-shape = SubResource("RectangleShape2D_06qxj")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Area2D"]
-position = Vector2(1282, 570)
-rotation = 1.57079
-shape = SubResource("RectangleShape2D_06qxj")
-
-[node name="InteractGraphic" type="Sprite2D" parent="."]
-position = Vector2(550, 457)
-scale = Vector2(3, 3)
-texture = ExtResource("13_3aswv")
