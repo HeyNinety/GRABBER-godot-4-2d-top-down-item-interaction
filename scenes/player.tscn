@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dksyx7mfhqv1f"]
+[gd_scene load_steps=8 format=3 uid="uid://dksyx7mfhqv1f"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_thqsv"]
 [ext_resource type="Texture2D" uid="uid://c263teum1xt6r" path="res://assets/player_sprites/bkspr01.png" id="2_0v7t6"]
@@ -7,9 +7,15 @@
 atlas = ExtResource("2_0v7t6")
 region = Rect2(40, 48, 75, 51)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ms6am"]
+polygon = PackedVector2Array(14.5, -21.3, 14.5, -16.5, 15, -14.5, 15.6, -14.5, 24.5, -13.2, 24.5, -11.6, 37.5, -2.9, 37.5, 10.5, 22.5, 17.8, 22.5, 18.5, 13.7, 25.5, -15.1, 25.5, -18.4, 21.5, -20.8, 21.5, -36.5, 15.9, -36.5, 14.6, -37.5, 13.9, -37.5, -2.5, -17.5, -12.7, -17.5, -15.1, -11.5, -25, 10.5, -25.5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_excgk"]
 atlas = ExtResource("2_0v7t6")
 region = Rect2(138, 434, 66, 73)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t6gi5"]
+polygon = PackedVector2Array(32, -35.5, 33, -23, 33, 5.2, 26.3, 20.5, 25, 20.5, 13.7, 36.5, -12, 36.5, -22, 28.5, -22, 26, -33, 7.4, -33, -26.3, -31, -35.9, -31, -36.5, -18.9, -36.5, -16, -34.6, -16, -31.4, -17.8, -16.1, -13.7, -13.3, -14.5, -10.5, -16, -10.5, -17, -9.2, -13.7, -5.4, -8.2, -15.5, -5.2, -15.5, 7, -16.7, 7, -14.3, 14.1, -6.4, 18, -10.3, 18, -18.5, 15.7, -36.5, 18.6, -36.5, 32, -36.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1cima"]
 radius = 19.0
@@ -23,10 +29,19 @@ script = ExtResource("1_thqsv")
 rotation = 1.57079
 texture = SubResource("AtlasTexture_5anho")
 
+[node name="PlayerGraphicLight" type="LightOccluder2D" parent="."]
+rotation = 1.57079
+occluder = SubResource("OccluderPolygon2D_ms6am")
+
 [node name="PlayerGraphicGrab" type="Sprite2D" parent="."]
 visible = false
 rotation = 1.57079
 texture = SubResource("AtlasTexture_excgk")
+
+[node name="PlayerGraphicGrabLight" type="LightOccluder2D" parent="."]
+visible = false
+rotation = 1.57079
+occluder = SubResource("OccluderPolygon2D_t6gi5")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2(-5, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://gkai4es01cu0"]
+[gd_scene load_steps=31 format=3 uid="uid://gkai4es01cu0"]
 
 [ext_resource type="PackedScene" uid="uid://dksyx7mfhqv1f" path="res://scenes/player.tscn" id="1_83awf"]
 [ext_resource type="Texture2D" uid="uid://da1mbl7xxtd4i" path="res://assets/environment/floor.png" id="1_pykt2"]
@@ -15,6 +15,43 @@
 [ext_resource type="Texture2D" uid="uid://du1ab7s3jm7nu" path="res://assets/input_icons/tile_0120.png" id="10_oxysh"]
 [ext_resource type="Texture2D" uid="uid://ba2j4b1tch3g7" path="res://assets/input_icons/tile_0086.png" id="11_afma6"]
 [ext_resource type="Texture2D" uid="uid://di1c8pfu6lri2" path="res://assets/input_icons/tile_0124.png" id="13_3aswv"]
+[ext_resource type="Texture2D" uid="uid://ci3nmhl0hyp5b" path="res://assets/light_textures/2d_lights_and_shadows_neutral_point_light.webp" id="16_fhfyv"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e0xt8"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1ppd3"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dhtoh"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cm2w1"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kd8pi"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_axvgv"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1a01a"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hd0lm"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2erpj"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i2bjs"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hdd02"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l2kiu"]
+polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
 [sub_resource type="Theme" id="Theme_aykrl"]
 default_font = ExtResource("4_fs3ih")
@@ -38,6 +75,9 @@ texture = ExtResource("2_fm1lc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall"]
+occluder = SubResource("OccluderPolygon2D_e0xt8")
+
 [node name="Wall2" type="StaticBody2D" parent="World"]
 position = Vector2(720, -9)
 
@@ -46,6 +86,9 @@ texture = ExtResource("2_fm1lc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall2"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall2"]
+occluder = SubResource("OccluderPolygon2D_1ppd3")
 
 [node name="Wall3" type="StaticBody2D" parent="World"]
 position = Vector2(1200, -9)
@@ -56,6 +99,9 @@ texture = ExtResource("2_fm1lc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall3"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall3"]
+occluder = SubResource("OccluderPolygon2D_dhtoh")
+
 [node name="Wall4" type="StaticBody2D" parent="World"]
 position = Vector2(1680, -9)
 
@@ -64,6 +110,9 @@ texture = ExtResource("2_fm1lc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall4"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall4"]
+occluder = SubResource("OccluderPolygon2D_cm2w1")
 
 [node name="Wall5" type="StaticBody2D" parent="World"]
 position = Vector2(240, 1086)
@@ -74,6 +123,9 @@ texture = ExtResource("2_fm1lc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall5"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall5"]
+occluder = SubResource("OccluderPolygon2D_kd8pi")
+
 [node name="Wall6" type="StaticBody2D" parent="World"]
 position = Vector2(720, 1086)
 
@@ -82,6 +134,9 @@ texture = ExtResource("2_fm1lc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall6"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall6"]
+occluder = SubResource("OccluderPolygon2D_axvgv")
 
 [node name="Wall7" type="StaticBody2D" parent="World"]
 position = Vector2(1200, 1086)
@@ -92,6 +147,9 @@ texture = ExtResource("2_fm1lc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall7"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall7"]
+occluder = SubResource("OccluderPolygon2D_1a01a")
+
 [node name="Wall8" type="StaticBody2D" parent="World"]
 position = Vector2(1680, 1086)
 
@@ -100,6 +158,9 @@ texture = ExtResource("2_fm1lc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall8"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall8"]
+occluder = SubResource("OccluderPolygon2D_hd0lm")
 
 [node name="Wall9" type="StaticBody2D" parent="World"]
 position = Vector2(-25, 299)
@@ -111,6 +172,9 @@ texture = ExtResource("2_fm1lc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall9"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall9"]
+occluder = SubResource("OccluderPolygon2D_2erpj")
+
 [node name="Wall10" type="StaticBody2D" parent="World"]
 position = Vector2(-25, 779)
 rotation = 1.57079
@@ -120,6 +184,9 @@ texture = ExtResource("2_fm1lc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall10"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall10"]
+occluder = SubResource("OccluderPolygon2D_i2bjs")
 
 [node name="Wall11" type="StaticBody2D" parent="World"]
 position = Vector2(1941, 299)
@@ -131,6 +198,9 @@ texture = ExtResource("2_fm1lc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall11"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall11"]
+occluder = SubResource("OccluderPolygon2D_hdd02")
+
 [node name="Wall12" type="StaticBody2D" parent="World"]
 position = Vector2(1941, 779)
 rotation = 1.57079
@@ -140,6 +210,9 @@ texture = ExtResource("2_fm1lc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall12"]
 polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="World/Wall12"]
+occluder = SubResource("OccluderPolygon2D_l2kiu")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_or6v7")
@@ -512,3 +585,103 @@ mass = 10.0
 gravity_scale = 1.0
 linear_damp = 10.0
 angular_damp = 10.0
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(1182, 540.64)
+scale = Vector2(0.64, 1.46)
+color = Color(0.952941, 0.843137, 0.780392, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+shadow_item_cull_mask = 0
+texture = ExtResource("16_fhfyv")
+texture_scale = 3.0
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(1628, 540.64)
+scale = Vector2(0.64, 1.46)
+color = Color(0.952941, 0.843137, 0.780392, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+shadow_item_cull_mask = 0
+texture = ExtResource("16_fhfyv")
+texture_scale = 3.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(742.76, 540.64)
+scale = Vector2(0.64, 1.46)
+color = Color(0.952941, 0.843137, 0.780392, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+shadow_item_cull_mask = 0
+texture = ExtResource("16_fhfyv")
+texture_scale = 3.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(294.76, 540.64)
+scale = Vector2(0.64, 1.46)
+color = Color(0.952941, 0.843137, 0.780392, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+shadow_item_cull_mask = 0
+texture = ExtResource("16_fhfyv")
+texture_scale = 3.0
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+position = Vector2(484, 73)
+color = Color(1, 0.34902, 0.223529, 1)
+energy = 1.75
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+texture = ExtResource("16_fhfyv")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+position = Vector2(963, 73)
+color = Color(1, 0.34902, 0.223529, 1)
+energy = 1.75
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+texture = ExtResource("16_fhfyv")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+position = Vector2(1442, 73)
+color = Color(1, 0.34902, 0.223529, 1)
+energy = 1.75
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+texture = ExtResource("16_fhfyv")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
+position = Vector2(484, 1002)
+color = Color(1, 0.34902, 0.223529, 1)
+energy = 1.75
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+texture = ExtResource("16_fhfyv")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Lights"]
+position = Vector2(963, 1002)
+color = Color(1, 0.34902, 0.223529, 1)
+energy = 1.75
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+texture = ExtResource("16_fhfyv")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Lights"]
+position = Vector2(1442, 1002)
+color = Color(1, 0.34902, 0.223529, 1)
+energy = 1.75
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+texture = ExtResource("16_fhfyv")

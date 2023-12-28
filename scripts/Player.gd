@@ -73,7 +73,9 @@ func remove_object():
 
 func hide_grab():
 	$PlayerGraphic.hide()
+	$PlayerGraphicLight.hide()
 	$PlayerGraphicGrab.show()
+	$PlayerGraphicGrabLight.show()
 	$"../UI/ControllerUI/VBoxContainer/Grab".hide()
 	$"../UI/ControllerUI/VBoxContainer/Drop".show()
 	$"../UI/Keyboard&MouseUI/VBoxContainer/Grab".hide()
@@ -81,7 +83,9 @@ func hide_grab():
 
 func show_grab():
 	$PlayerGraphic.show()
+	$PlayerGraphicLight.show()
 	$PlayerGraphicGrab.hide()
+	$PlayerGraphicGrabLight.hide()
 	$"../UI/ControllerUI/VBoxContainer/Grab".show()
 	$"../UI/ControllerUI/VBoxContainer/Drop".hide()
 	$"../UI/Keyboard&MouseUI/VBoxContainer/Grab".show()
