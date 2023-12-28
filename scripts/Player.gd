@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 
-@onready var pickupItem = get_node("../PickupItem")
-@onready var hand = $ItemHolder/ItemAnchor
-@onready var pickup_raycast = $ItemHolder/PickupRaycast
+@onready var hand = $ItemAnchor
+@onready var pickup_raycast = $PickupRaycast
 
 @export var speed: float = 50000.0
 @export var accel: float = 50000.0
@@ -12,6 +11,7 @@ extends CharacterBody2D
 
 var picked_object
 var pull_power: int = 100
+
 
 
 func _physics_process(delta):
@@ -35,15 +35,23 @@ func _physics_process(delta):
 		rotation = aim_direction.angle()
 	
 	
-	
-	
 	if picked_object!= null:
 		var a = picked_object.global_transform.origin
 		var b = hand.global_transform.origin
 		
 		picked_object.set_linear_velocity((b-a) * pull_power)
 		picked_object.rotation = self.rotation
-
+		
+		
+	#detect item via raycast
+	if pickup_raycast.is_colliding():
+		var target = pickup_raycast.get_collider()
+		if target != null:
+			if target.is_in_group("Item"):
+				#print("target is Item")
+				$"../InteractGraphic".show()
+	else:
+		$"../InteractGraphic".hide()
 
 func _input(event: InputEvent) -> void:
 	#toggles between mosue input and controller input depending on what input is being used
@@ -64,6 +72,7 @@ func pick_object():
 	var object = pickup_raycast.get_collider()
 	
 	if object != null and object.is_in_group("Item"):
+		
 		picked_object = object
 		$"../UI/ControllerUI/VBoxContainer/Grab".hide()
 		$"../UI/ControllerUI/VBoxContainer/Drop".show()

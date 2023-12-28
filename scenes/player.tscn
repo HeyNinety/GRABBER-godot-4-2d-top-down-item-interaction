@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfbuc"]
 size = Vector2(128, 128)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(264, 307)
 script = ExtResource("1_thqsv")
 
@@ -14,15 +14,13 @@ script = ExtResource("1_thqsv")
 scale = Vector2(4, 4)
 texture = ExtResource("2_36h8g")
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." groups=["Player"]]
 shape = SubResource("RectangleShape2D_rfbuc")
 
-[node name="ItemHolder" type="Node2D" parent="."]
-
-[node name="ItemAnchor" type="Marker2D" parent="ItemHolder"]
+[node name="ItemAnchor" type="Marker2D" parent="."]
 position = Vector2(160, 0)
 
-[node name="PickupRaycast" type="RayCast2D" parent="ItemHolder"]
+[node name="PickupRaycast" type="RayCast2D" parent="."]
 rotation = -1.5708
 target_position = Vector2(0, 160)
-collision_mask = 5
+collision_mask = 4

@@ -387,7 +387,13 @@ text = " Drop"
 label_settings = SubResource("LabelSettings_d3aiy")
 
 [node name="Player" parent="." instance=ExtResource("1_83awf")]
-position = Vector2(544, 473)
+position = Vector2(550, 550)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2(0, -93)
+remote_path = NodePath("../../InteractGraphic")
+update_rotation = false
+update_scale = false
 
 [node name="PickupItem" parent="." instance=ExtResource("2_m7fbk")]
 position = Vector2(1310, 490)
@@ -421,3 +427,8 @@ shape = SubResource("RectangleShape2D_06qxj")
 position = Vector2(1282, 570)
 rotation = 1.57079
 shape = SubResource("RectangleShape2D_06qxj")
+
+[node name="InteractGraphic" type="Sprite2D" parent="."]
+position = Vector2(550, 457)
+scale = Vector2(3, 3)
+texture = ExtResource("13_3aswv")

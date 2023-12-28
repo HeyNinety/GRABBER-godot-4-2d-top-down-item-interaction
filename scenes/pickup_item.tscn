@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://chk136voelpil"]
 
-[ext_resource type="Texture2D" uid="uid://2cmj5ak8unxe" path="res://icon.png" id="1_nwdhd"]
+[ext_resource type="Texture2D" uid="uid://bnjjfh3mus5aw" path="res://assets/item_sprites/crate.png" id="1_8gc7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0lk2"]
 size = Vector2(64, 64)
@@ -12,8 +12,7 @@ collision_mask = 5
 gravity_scale = 0.0
 
 [node name="PickupGraphic" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("1_nwdhd")
+texture = ExtResource("1_8gc7n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Item"]]
 shape = SubResource("RectangleShape2D_u0lk2")
