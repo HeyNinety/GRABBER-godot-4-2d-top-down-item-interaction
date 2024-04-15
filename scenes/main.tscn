@@ -67,6 +67,7 @@ position = Vector2(960, 540)
 texture = ExtResource("1_pykt2")
 
 [node name="Wall" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(240, -9)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall"]
@@ -79,6 +80,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_e0xt8")
 
 [node name="Wall2" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(720, -9)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall2"]
@@ -91,6 +93,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_1ppd3")
 
 [node name="Wall3" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(1200, -9)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall3"]
@@ -103,6 +106,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_dhtoh")
 
 [node name="Wall4" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(1680, -9)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall4"]
@@ -115,6 +119,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_cm2w1")
 
 [node name="Wall5" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(240, 1086)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall5"]
@@ -127,6 +132,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_kd8pi")
 
 [node name="Wall6" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(720, 1086)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall6"]
@@ -139,6 +145,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_axvgv")
 
 [node name="Wall7" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(1200, 1086)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall7"]
@@ -151,6 +158,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_1a01a")
 
 [node name="Wall8" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(1680, 1086)
 
 [node name="Wall" type="Sprite2D" parent="World/Wall8"]
@@ -163,6 +171,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_hd0lm")
 
 [node name="Wall9" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(-25, 299)
 rotation = 1.57079
 
@@ -176,6 +185,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_2erpj")
 
 [node name="Wall10" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(-25, 779)
 rotation = 1.57079
 
@@ -189,6 +199,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_i2bjs")
 
 [node name="Wall11" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(1941, 299)
 rotation = 1.57079
 
@@ -202,6 +213,7 @@ polygon = PackedVector2Array(240, 67.5, -240, 67.5, -240, -67.5, 240, -67.5)
 occluder = SubResource("OccluderPolygon2D_hdd02")
 
 [node name="Wall12" type="StaticBody2D" parent="World"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(1941, 779)
 rotation = 1.57079
 
