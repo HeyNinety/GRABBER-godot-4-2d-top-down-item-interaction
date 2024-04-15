@@ -19,9 +19,7 @@ GRABBER is an open-source top-down 2D item interaction project made with the [Go
 
 <kbd>mouse</kbd> or <kbd>right stick</kbd> to aim.
 
-<kbd>G</kbd> or <kbd>Xbox Ⓐ</kbd> to pick up.
-
-<kbd>E</kbd> or <kbd>Xbox Ⓑ</kbd> to drop.
+<kbd>G</kbd> or <kbd>Xbox Ⓐ</kbd> to pick up / drop.
 
 
 ## Details
@@ -48,3 +46,6 @@ https://thenounproject.com/coquet_adrien/
 
 Public Pixel font designed by GGBotNet:
 https://www.fontspace.com/public-pixel-font-f72305
+
+Character graphics by tokka on opengameart.org:
+https://opengameart.org/content/top-down-runner
